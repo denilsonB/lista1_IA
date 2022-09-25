@@ -1,0 +1,25 @@
+10
+cartao & ~data & senha & ~tentativas & ~saldo & ~limite 
+pagamento
+~cartao
+~pagamento
+data
+~pagamento
+~senha
+~pagamento
+tentativas
+~pagamento
+~saldo
+~pagamento
+limite
+~pagamento
+cartao
+~data
+senha 
+~tentativas 
+cartao & saldo
+~limite 
+2
+cartao 
+senha 
+pagamento
