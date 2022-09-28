@@ -3,9 +3,9 @@ lista 1 da matéria de inteligência artificial: ferramenta voltada para constru
 dupla: Denilson Bulhões e José Arhur Lopes
 
 ## Formato de Entrada
-Antecedente: ex A & B
-consequente: ex C
-uma regra por 2 linhas
+-Antecedente: ex A & B
+-consequente: ex C
+-uma regra a cada 2 linhas
 
 ## Como rodar
 arquivos em python sendo executados com 2 cliques ou rodando pelo prompt de comando com python nome_do_arquivo.py
