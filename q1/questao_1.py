@@ -1,7 +1,5 @@
-#expasões do 3 exemplo
-#se cartão verificado então data não expirada
-#se senha correta então tentativas não excedidas
-#se cartão e saldo ok então não tem limite diario
+#Denilson Bulhões da Rosa Silva
+#José Arthur Lopes
 class Expressao: #classe para representar a exporessão, ex: A = SIM
 
     def __init__(self, var, opr, val):
@@ -158,7 +156,6 @@ def executar_um_ciclo(as_regras):
         if (e_fato(uma_regra[1][0]) == False):#verifica se o consequente não está na base de fatos
                 base_de_fatos.append(uma_regra[1][0])
                 if(uma_regra[1][0].val == False):
-                    print('---------------------',uma_regra[1][0])
                     modus_tollens(uma_regra[1][0])
                 
         remove_regra_da_base(uma_regra)

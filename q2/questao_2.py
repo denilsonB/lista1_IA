@@ -34,6 +34,8 @@ def recebe_regras(qtd):
         for var in antecedente:# constroi os antecedentes
             var = var.strip()
             exp = Expressao(var, "=", True)
+            if var[0] == '~':
+                exp.val = False
             expressoes_antecedentes.append(exp)
 
         print("digite o(s) consequente(s) da {} regra".format(i + 1))
@@ -44,6 +46,8 @@ def recebe_regras(qtd):
         for var in consequente:# constroi os consequentes
             var = var.strip()
             exp = Expressao(var, "=", True)
+            if var[0] == '~':
+                exp.val = False
             expressoes_consequentes.append(exp)
 
         regra = []
@@ -56,6 +60,8 @@ def recebe_fatos(qtd):
         print("Digite o {} fato ".format(i+1))
         var = input("")
         exp = Expressao(var, "=", True)
+        if var[0] == '~':
+            exp.val = False
         base_de_fatos.append(exp)
 
 def e_fato(meta):
@@ -93,6 +99,8 @@ def estabelecer_conj_fatos(as_metas,consequentes):
         for exp in consequentes:
             if (e_fato(exp)) == False:
                 base_de_fatos.append(exp)
+        copia_das_regras = base_de_regras.copy()
+        executar_um_ciclo(copia_das_regras)
         return True
     uma_meta = as_metas.pop(0)
     atribui_conclusao(uma_meta)
@@ -101,6 +109,29 @@ def estabelecer_conj_fatos(as_metas,consequentes):
         atribui_conclusao(objetivo)
         return False
     estabelecer_conj_fatos(as_metas,consequentes)
+
+def executar_um_ciclo(as_regras):
+    if len(as_regras) == 0:
+        return False
+
+    uma_regra = as_regras.pop(0)
+    if valida_regra(uma_regra):
+        if (e_fato(uma_regra[1][0]) == False):#verifica se o consequente não está na base de fatos
+            base_de_fatos.append(uma_regra[1][0])
+                
+        executar_um_ciclo(base_de_regras)
+        return
+    executar_um_ciclo(as_regras)
+
+def valida_regra(uma_regra):
+    premissas = 0
+    for antecedente in uma_regra[0]:
+        if e_fato(antecedente) :
+            premissas+=1
+            if premissas == len(uma_regra[0]):
+                return True
+    return False
+
 
 def mostar_fatos():
     print("\nEsta é a base de fatos:")
