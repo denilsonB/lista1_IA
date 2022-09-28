@@ -1,5 +1,5 @@
 10
-cartao & ~data & senha & ~tentativas & ~saldo & ~limite 
+cartao & ~data & senha & ~tentativas & saldo & ~limite 
 pagamento
 ~cartao
 ~pagamento
@@ -15,10 +15,10 @@ limite
 ~pagamento
 cartao
 ~data
-senha 
-~tentativas 
+senha
+~tentativas
 cartao & saldo
-~limite 
+~limite
 1
-cartao 
+cartao
 pagamento
