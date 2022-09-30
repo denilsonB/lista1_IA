@@ -1,6 +1,7 @@
 # lista1_IA
-lista 1 da matéria de inteligência artificial: ferramenta voltada para construção de aplicações de sistemas baseados em conhecimento.
-dupla: Denilson Bulhões e José Arhur Lopes
+Dupla: Denilson Bulhões e José Arhur Lopes
+Disciplina: Inteligência artificial
+Lista 1: Ferramenta voltada para construção de aplicações de sistemas baseados em conhecimento.
 
 ## Formato de Entrada
 - Antecedente: ex A & B
